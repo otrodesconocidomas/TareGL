@@ -1,14 +1,15 @@
 package gestion_lab
+import servicios.Locales.CrudLocalesService
 
 class LocalController {
-
-    def localvs ={
-        def idlocal = 01
-        def latitud = 14.1000
-        def longuitud= 15.000
+    def crudLocalesService
+    
+    def localvs(){
+      
         /*def escuelaPropie= escuelaUser
         def reserva = reservas
-        [idLoc: idlocal, lati: latitud, longi: longuitud, escual: escuelaPropie, reser: reserva]*/
+        idLoc: idlocal, lati: latitud, longi: longuitud, escual: escuelaPropie, reser: reserva*/
+          render(model:[lista: crudLocalesService.listaLocales()])
     }
 }
 /*La escuelaPropie y reserva no se si está bueno */
