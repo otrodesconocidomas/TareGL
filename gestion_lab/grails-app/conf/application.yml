@@ -88,26 +88,30 @@ hibernate:
         queries: false
         use_second_level_cache: false
         use_query_cache: false
+    jdbc:
+        use_get_generated_keys: true
 dataSource:
     pooled: true
     jmxExport: true
+    url: jdbc:oracle:thin:@localhost:1521:XE
     driverClassName: oracle.jdbc.OracleDriver
-    username: PROYECTO
-    password: '123'
+    username: Proyecto
+    password: too115
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:oracle:thin:@somehost.net:1521:PROYECTO
+            url: "jdbc:oracle:thin:@localhost:1521:XE"
+    test:
         dataSource:
             dbCreate: update
-            url: jdbc:oracle:thin:@somehost.net:1521:PROYECTO
+            url: "jdbc:oracle:thin:@localhost:1521:XE"
     production:
         dataSource:
-            dbCreate: none
-            url: jdbc:oracle:thin:@somehost.net:1521:PROYECTO
-          properties:
+            dbCreate: update
+            url: "jdbc:oracle:thin:@localhost:1521:XE"
+            properties:
                 jmxEnabled: true
                 initialSize: 5
                 maxActive: 50
