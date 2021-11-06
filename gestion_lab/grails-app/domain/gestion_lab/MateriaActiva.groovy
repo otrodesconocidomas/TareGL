@@ -3,7 +3,9 @@ package gestion_lab
 class MateriaActiva {
 int ciclo
 int anio
-static belongsTo = [coordinador: Profesor]
+Date horaLab
+
+static belongsTo = [coordinador: Profesor, localReserva: Local]
 
 
     static constraints = {
