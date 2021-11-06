@@ -91,24 +91,23 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
+    driverClassName: oracle.jdbc.OracleDriver
+    username: PROYECTO
+    password: '123'
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-    test:
+            url: jdbc:oracle:thin:@somehost.net:1521:PROYECTO
         dataSource:
             dbCreate: update
-            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:oracle:thin:@somehost.net:1521:PROYECTO
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-            properties:
+            url: jdbc:oracle:thin:@somehost.net:1521:PROYECTO
+          properties:
                 jmxEnabled: true
                 initialSize: 5
                 maxActive: 50
