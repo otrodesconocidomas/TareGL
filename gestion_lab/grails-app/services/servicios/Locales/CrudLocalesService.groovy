@@ -7,7 +7,8 @@ import gestion_lab.Escuela
 class CrudLocalesService {
 
     def listaLocales() {
-        Local.list()
+        def lista = Local.list()
+        lista
 
     }
 }
