@@ -9,6 +9,5 @@ static belongsTo = [prerequisito: Materia]
 
     static constraints = {
                  codMateria unique: true
-                 prerequisito nullable: true 
     }
 }
